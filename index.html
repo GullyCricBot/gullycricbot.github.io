@@ -10,21 +10,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* keep anchored sections clear of the sticky nav when scrolled to */
+  section[id], header[id], #top { scroll-margin-top: 88px; }
+</style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="index.html" class="brand">
+    <a href="#top" class="brand">
       <img src="assets/img/logo.png" alt="GullyCric Bot logo">
       <span class="brand-text">GULLY<span class="red">CRIC</span> BOT</span>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="modes.html" target="_blank">Modes</a></li>
-      <li><a href="rubies.html" target="_blank">Rubies</a></li>
-      <li><a href="tournaments.html" target="_blank">Tournaments</a></li>
-      <li><a href="commands.html" target="_blank">Commands</a></li>
-      <li><a href="faq.html" target="_blank">FAQ</a></li>
+      <li><a href="#modes">Modes</a></li>
+      <li><a href="#rubies">Rubies</a></li>
+      <li><a href="#tournaments">Tournaments</a></li>
+      <li><a href="#commands">Commands</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-cta">
       <a href="https://t.me/GullyCricPavilion" class="btn btn-ghost" style="padding:10px 20px;font-size:0.85rem;">Community</a>
@@ -44,7 +48,7 @@
         <p class="hero-sub">GullyCric turns street hand-cricket into a full Telegram experience — live scorecards, ball-by-ball commentary, a Rubies economy, and IPL-style tournaments. One duel: bowler picks 0–6 in DM, batter guesses in the group. Match the number, you're out.</p>
         <div class="hero-actions">
           <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join @GullyCricPavilion</a>
-          <a href="modes.html" target="_blank" class="btn btn-outline">See how it's played</a>
+          <a href="#modes" class="btn btn-outline">See how it's played</a>
         </div>
         <div class="hero-meta">
           <div><b>0–6</b>every delivery</div>
@@ -112,6 +116,271 @@
     </div>
   </section>
 
+  <!-- ================= MODES ================= -->
+  <section id="modes">
+    <div class="container">
+      <div class="eyebrow">Game modes</div>
+      <h2 class="split-title">Pick your <span class="blue">format</span>, we'll <span class="red">umpire</span></h2>
+      <p class="lede">From a free-for-all with strangers to a full IPL-style league across groups — GullyCric scales from one over to a whole season.</p>
+    </div>
+
+    <div class="container feature" style="margin-top:56px;">
+      <div class="section-banner"><img src="assets/img/banner-solo.jpg" alt="Solo Mode — Player vs Player"></div>
+      <div class="feature-copy">
+        <div class="eyebrow">Solo Mode</div>
+        <h2>Every player bats their own innings</h2>
+        <p class="lede">A free-for-all where everyone takes a turn batting while the rest of the group bowls. Best all-round performance wins the round.</p>
+        <ul class="feature-list cols">
+          <li><b>/joinsolo</b> to queue up, <b>/leavesolo</b> if you change your mind — the match auto-starts ~60s after the second player joins, or the host fires <b>/forcestart</b>.</li>
+          <li>Pick 3 or 6 balls per over. Join alone and you'll face the bot itself.</li>
+          <li>The number <b>0 is disabled entirely</b> in Solo — every delivery and shot is 1–6.</li>
+          <li>A live standings card tracks runs, balls and wickets as the rounds rotate.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container feature" style="margin-top:88px;">
+      <div class="section-banner"><img src="assets/img/banner-team.jpg" alt="Team Mode — Squad vs Squad"></div>
+      <div class="feature-copy">
+        <div class="eyebrow">Team Mode</div>
+        <h2>The flagship: two teams, one toss, a Super Over if it's tied</h2>
+        <p class="lede">Captains, betting, uneven squads that auto-balance, and a full second innings chase. This is GullyCric at full stretch.</p>
+        <ul class="feature-list cols">
+          <li><b>Claim Host →</b> create team slots → players join with <b>/join_team_a</b> / <b>/join_team_b</b> during a ~95s window.</li>
+          <li>Host sets overs with <b>/set_overs</b>; the toss fires automatically and the winning captain picks bat or field.</li>
+          <li>Captains send batters and bowlers with <b>/batting N</b> and <b>/bowling N</b> — hosts can too.</li>
+          <li>Target is first-innings score + 1. Still tied after both innings? A one-over <b>Super Over</b> decides it.</li>
+          <li>Mid-match tools: <b>/substitute</b> (pre-innings, unlimited), <b>/impact</b> (max 2 per team), <b>/add · /remove · /shift</b> for the host.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUIRKS / RULES ================= -->
+  <section class="tight" style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);" id="rules">
+    <div class="container">
+      <div class="eyebrow">Gameplay rules & quirks</div>
+      <h2 style="max-width:600px;">The small print that decides close matches</h2>
+      <div class="grid-3 mt-40">
+        <div class="card">
+          <span class="num">Rotation</span>
+          <h3>Strike & dismissals</h3>
+          <p>Strike rotates on odd runs (1/3/5) and at the end of each over. Out for a duck on 0 runs; three wickets in a row is a hat-trick.</p>
+        </div>
+        <div class="card">
+          <span class="num">Team mode only</span>
+          <h3>The tactical zero</h3>
+          <p>A bowler may bowl one dead-ball 0 per over — a forced dot, no matter what the batter plays. Banned on the last 2 balls of an innings, and a batter can't block a hat-trick ball with it.</p>
+        </div>
+        <div class="card">
+          <span class="num">Fairness</span>
+          <h3>Anti-spam limits</h3>
+          <p>No bowler takes two overs back-to-back. The same delivery can't repeat more than twice running, or 3 times total in an over.</p>
+        </div>
+        <div class="card">
+          <span class="num">80 seconds</span>
+          <h3>AFK protection</h3>
+          <p>An idle bowler concedes +6 and gets rotated out; an idle batter is given out. Use <b>/alert</b> to ping teammates before the timer bites.</p>
+        </div>
+        <div class="card">
+          <span class="num">DM only</span>
+          <h3>Bowling happens privately</h3>
+          <p>When it's your turn, the bot DMs a number keyboard. No keyboard? Tap Bowl Delivery in the group and make sure you've verified.</p>
+        </div>
+        <div class="card">
+          <span class="num">/sledge</span>
+          <h3>Commentary & banter</h3>
+          <p>English or Hindi commentary via <b>/changecom</b>. Admins can toggle spicy sledging on or off with <b>/sledgeon</b> / <b>/sledgeoff</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RUBIES ================= -->
+  <section id="rubies">
+    <div class="container">
+      <div class="eyebrow">Economy</div>
+      <h2 class="split-title">Rubies — earn it, <span class="red">bet</span> it, <span class="blue">gift</span> it</h2>
+      <p class="lede">Every player gets a starter purse, and every good performance tops it up — credited straight to DM.</p>
+
+      <div class="rubies-wrap mt-40">
+        <table class="ruby-table">
+          <thead><tr><th>Achievement</th><th style="text-align:right;">Rubies</th></tr></thead>
+          <tbody>
+            <tr><td>New player starter grant</td><td class="amt">2,000</td></tr>
+            <tr><td>Played a team / tournament match</td><td class="amt">100</td></tr>
+            <tr><td>On the winning team</td><td class="amt">300</td></tr>
+            <tr><td>Half-century (50)</td><td class="amt">400</td></tr>
+            <tr><td>Century (100)</td><td class="amt">1,000</td></tr>
+            <tr><td>3-wicket haul</td><td class="amt">400</td></tr>
+            <tr><td>5-wicket haul</td><td class="amt">800</td></tr>
+            <tr><td>Hat-trick</td><td class="amt">700</td></tr>
+            <tr><td>Player of the Match</td><td class="amt">600</td></tr>
+            <tr><td>Orange / Purple Cap (each)</td><td class="amt">500</td></tr>
+            <tr><td>Tournament participation</td><td class="amt">500</td></tr>
+            <tr><td>Tournament finish 1st / 2nd / 3rd / 4th</td><td class="amt">15,000 / 9,000 / 5,000 / 3,000</td></tr>
+          </tbody>
+        </table>
+
+        <div class="ruby-side">
+          <h3>Betting & gifting</h3>
+          <p>During the first innings only, back a side with <b>/bet a &lt;amount&gt;</b> or <b>/bet b &lt;amount&gt;</b>. Every stake goes into a shared pool and winners split it once the match ends. The window shuts the moment the first innings does.</p>
+          <p>Feeling generous? <b>/gift</b> sends Rubies to another player. Generosity is a virtue; bankruptcy is not.</p>
+          <div style="margin-top:18px;">
+            <span class="ruby-chip">/rubies</span>
+            <span class="ruby-chip">/purse</span>
+            <span class="ruby-chip">/balance</span>
+            <span class="ruby-chip">/bet a|b</span>
+            <span class="ruby-chip">/gift</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS / LEADERBOARD ================= -->
+  <section style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);" id="stats">
+    <div class="container">
+      <div class="section-banner"><img src="assets/img/banner-leaderboard.jpg" alt="Leaderboard"></div>
+      <div class="eyebrow">Stats, leaderboards & rankings</div>
+      <h2 style="max-width:640px;">Two leaderboard systems, and they measure different things</h2>
+      <div class="grid-3 mt-40">
+        <div class="card">
+          <span class="num">Personal</span>
+          <h3>/userstat · /compare · /botstats</h3>
+          <p>Your career record — runs, wickets, strike rate, milestones, Rubies balance — plus head-to-head comparisons and community-wide numbers.</p>
+        </div>
+        <div class="card">
+          <span class="num">/leaderboard</span>
+          <h3>All-time Top-10s</h3>
+          <p>Runs, Wickets, Sixes, Fours, Centuries, Fifties, Hat-Tricks, POTM, Catches, Hall of Fame, and the Tournament Hall of Fame archive. Forever boards — go make history.</p>
+        </div>
+        <div class="card">
+          <span class="num">/ranking</span>
+          <h3>Weekly & all-time standings</h3>
+          <p>This group's Orange/Purple Cap boards plus global weekly and all-time rankings, with your own position highlighted. Weekly resets every Monday.</p>
+        </div>
+      </div>
+      <p class="lede mt-40">Organisers can keep leaderboards clean with <b>/excludestats</b>, <b>/includestats</b> and <b>/lockedstats</b> — handy for bot and test accounts.</p>
+    </div>
+  </section>
+
+  <!-- ================= TOURNAMENTS ================= -->
+  <section id="tournaments">
+    <div class="container">
+      <div class="section-banner"><img src="assets/img/banner-tournaments.jpg" alt="Tournaments — Runs, Wickets, Glory"></div>
+      <div class="eyebrow">Tournaments</div>
+      <h2 class="split-title">Full IPL-style leagues, <span class="blue">automated</span> end to end</h2>
+      <p class="lede">Registered teams, group stages, a live points table with NRR, fixtures across multiple groups, playoffs, and champions immortalised in the Hall of Fame.</p>
+
+      <div class="grid-4 mt-40">
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Following along</h3>
+          <p><b>/pointstable</b>, <b>/tourroster</b>, <b>/tourstats</b>, <b>/schedule</b> (your own timezone via <b>/mytimezone</b>).</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>Running one</h3>
+          <p><b>/hosttournament</b> walks organisers through naming the tour and registering teams, squad by squad.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎛️</div>
+          <h3>Control panel</h3>
+          <p><b>/tournament</b> opens Team Groups, Squads, Points Table, Status, Top Scorers, Fixtures and Schedule in one place.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏆</div>
+          <h3>Playoffs</h3>
+          <p><b>/startplayoffs</b> needs 4+ non-forfeited teams; seeds top 4 into Eliminator → Qualifiers → Final automatically.</p>
+        </div>
+      </div>
+
+      <p class="lede mt-40">Match results update the points table and NRR by themselves. Playoff brackets advance on their own. Orange/Purple Cap Rubies post automatically. Discipline tools — <b>/forfeit</b>, <b>/pen</b>, <b>/deltourteam</b> — stay in the organiser's back pocket for when a team goes quiet.</p>
+    </div>
+  </section>
+
+  <!-- ================= ROLES ================= -->
+  <section style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);" id="roles">
+    <div class="container">
+      <div class="eyebrow">Roles & permissions</div>
+      <h2 style="max-width:600px;">Everyone in the group has a job — some just have more buttons</h2>
+      <div class="roles-grid mt-40">
+        <div class="role-card">
+          <h3>Player</h3>
+          <p>Anyone in the group. Joins matches, bats, bowls, bets, checks stats.</p>
+        </div>
+        <div class="role-card">
+          <h3>Captain</h3>
+          <p>Chosen after the toss. Sends batters and bowlers, transfers captaincy, renames the team.</p>
+        </div>
+        <div class="role-card">
+          <h3>Host</h3>
+          <p>Whoever claims host in setup. Controls the lobby, overs, rosters, force-start, timers — and everything a captain can.</p>
+        </div>
+        <div class="role-card tier-2">
+          <h3>Group Admin</h3>
+          <p>Telegram admins of the group. Lock/unlock the bot, toggle sledging and cleanup, cancel matches, confirm <b>/endcricket</b>.</p>
+        </div>
+        <div class="role-card tier-2">
+          <h3>Organiser (Superman)</h3>
+          <p>Trusted users granted full rights via <b>/superman</b>. Runs tournaments, authorises groups, sees the extended menu.</p>
+        </div>
+        <div class="role-card tier-3">
+          <h3>Core Developers</h3>
+          <p>The three hardcoded master IDs. Only they grant or revoke Superman and use owner-level tools.</p>
+        </div>
+      </div>
+      <p class="lede mt-40"><b>/endcricket</b> needs 2 admin confirmations to abort a live match — no lone wolf nukes a game in progress.</p>
+    </div>
+  </section>
+
+  <!-- ================= AUTOMATION ================= -->
+  <section id="automation">
+    <div class="container">
+      <div class="eyebrow">Automation & housekeeping</div>
+      <h2 style="max-width:640px;">A lot of the magic is invisible</h2>
+      <div class="grid-3 mt-40">
+        <div class="card"><span class="num">01</span><h3>Menu dedup</h3><p>Only one main menu lives per chat — a fresh <b>/startcricket</b> retires the old card seconds after landing.</p></div>
+        <div class="card"><span class="num">02</span><h3>Self-cleaning messages</h3><p>Warnings, /about cards, announcements and command echoes delete themselves after a short delay.</p></div>
+        <div class="card"><span class="num">03</span><h3>Post-match cleanup</h3><p>Old match messages sweep away after a game — toggle per group with <b>/cleanuppostmatch</b>.</p></div>
+        <div class="card"><span class="num">04</span><h3>Welcome & verify</h3><p>New members get a witty welcome and a verify button, auto-deleting in 60s — toggle with <b>/welcomeplayers</b>.</p></div>
+        <div class="card"><span class="num">05</span><h3>Flood control</h3><p>A per-chat token bucket lets wicket bursts fire instantly while respecting Telegram's rate limits. The bot never crashes from it.</p></div>
+        <div class="card"><span class="num">06</span><h3>Crash-safe state</h3><p>Live matches persist to disk — a redeploy or restart resumes cleanly instead of eating your match.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMMANDS ================= -->
+  <section id="commands">
+    <div class="container">
+      <div class="eyebrow">Command reference</div>
+      <h2 style="max-width:640px;">Every command, filterable by who can use it</h2>
+
+      <input type="text" class="cmd-search" id="cmdSearch" placeholder="Search a command… e.g. impact, batting, tournament">
+      <div class="cmd-filters" id="cmdFilters">
+        <button class="cmd-filter active" data-tag="all">All</button>
+        <button class="cmd-filter" data-tag="everyone">Everyone</button>
+        <button class="cmd-filter" data-tag="host">Host & Captain</button>
+        <button class="cmd-filter" data-tag="admin">Group Admin</button>
+        <button class="cmd-filter" data-tag="organiser">Organiser</button>
+        <button class="cmd-filter" data-tag="dev">Core Dev</button>
+      </div>
+
+      <div class="cmd-grid" id="cmdGrid"></div>
+      <div class="cmd-empty" id="cmdEmpty">No commands match that search.</div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="container">
+      <div class="eyebrow center mx-auto" style="justify-content:center;">FAQ & troubleshooting</div>
+      <h2 class="center" style="max-width:640px;margin:0 auto 44px;">Answers before you have to ask the group</h2>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+
   <!-- ================= CTA ================= -->
   <section class="tight">
     <div class="container">
@@ -143,19 +412,19 @@
       <div class="footer-col">
         <h4>Play</h4>
         <ul>
-          <li><a href="modes.html">Solo Mode</a></li>
-          <li><a href="modes.html">Team Mode</a></li>
-          <li><a href="tournaments.html">Tournaments</a></li>
-          <li><a href="rubies.html">Rubies</a></li>
+          <li><a href="#modes">Solo Mode</a></li>
+          <li><a href="#modes">Team Mode</a></li>
+          <li><a href="#tournaments">Tournaments</a></li>
+          <li><a href="#rubies">Rubies</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Reference</h4>
         <ul>
-          <li><a href="commands.html">All commands</a></li>
-          <li><a href="tournaments.html#roles">Roles & permissions</a></li>
-          <li><a href="modes.html#rules">Rules & quirks</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#commands">All commands</a></li>
+          <li><a href="#roles">Roles & permissions</a></li>
+          <li><a href="#rules">Rules & quirks</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       <div class="footer-col">
