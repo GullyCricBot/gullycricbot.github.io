@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GullyCric Bot — Rubies & Stats</title>
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+      <span class="brand-text">GULLY<span class="red">CRIC</span> BOT</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="modes.html" target="_blank">Modes</a></li>
+      <li><a href="rubies.html" target="_blank">Rubies</a></li>
+      <li><a href="tournaments.html" target="_blank">Tournaments</a></li>
+      <li><a href="commands.html" target="_blank">Commands</a></li>
+      <li><a href="faq.html" target="_blank">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://t.me/GullyCricPavilion" class="btn btn-ghost" style="padding:10px 20px;font-size:0.85rem;">Community</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= RUBIES ================= -->
+  <section id="rubies">
+    <div class="container">
+      <div class="eyebrow">Economy</div>
+      <h2 class="split-title">Rubies — earn it, <span class="red">bet</span> it, <span class="blue">gift</span> it</h2>
+      <p class="lede">Every player gets a starter purse, and every good performance tops it up — credited straight to DM.</p>
+
+      <div class="rubies-wrap mt-40">
+        <table class="ruby-table">
+          <thead><tr><th>Achievement</th><th style="text-align:right;">Rubies</th></tr></thead>
+          <tbody>
+            <tr><td>New player starter grant</td><td class="amt">2,000</td></tr>
+            <tr><td>Played a team / tournament match</td><td class="amt">100</td></tr>
+            <tr><td>On the winning team</td><td class="amt">300</td></tr>
+            <tr><td>Half-century (50)</td><td class="amt">400</td></tr>
+            <tr><td>Century (100)</td><td class="amt">1,000</td></tr>
+            <tr><td>3-wicket haul</td><td class="amt">400</td></tr>
+            <tr><td>5-wicket haul</td><td class="amt">800</td></tr>
+            <tr><td>Hat-trick</td><td class="amt">700</td></tr>
+            <tr><td>Player of the Match</td><td class="amt">600</td></tr>
+            <tr><td>Orange / Purple Cap (each)</td><td class="amt">500</td></tr>
+            <tr><td>Tournament participation</td><td class="amt">500</td></tr>
+            <tr><td>Tournament finish 1st / 2nd / 3rd / 4th</td><td class="amt">15,000 / 9,000 / 5,000 / 3,000</td></tr>
+          </tbody>
+        </table>
+
+        <div class="ruby-side">
+          <h3>Betting & gifting</h3>
+          <p>During the first innings only, back a side with <b>/bet a &lt;amount&gt;</b> or <b>/bet b &lt;amount&gt;</b>. Every stake goes into a shared pool and winners split it once the match ends. The window shuts the moment the first innings does.</p>
+          <p>Feeling generous? <b>/gift</b> sends Rubies to another player. Generosity is a virtue; bankruptcy is not.</p>
+          <div style="margin-top:18px;">
+            <span class="ruby-chip">/rubies</span>
+            <span class="ruby-chip">/purse</span>
+            <span class="ruby-chip">/balance</span>
+            <span class="ruby-chip">/bet a|b</span>
+            <span class="ruby-chip">/gift</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS / LEADERBOARD ================= -->
+  <section style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);" id="stats">
+    <div class="container">
+      <div class="section-banner"><img src="assets/img/banner-leaderboard.jpg" alt="Leaderboard"></div>
+      <div class="eyebrow">Stats, leaderboards & rankings</div>
+      <h2 style="max-width:640px;">Two leaderboard systems, and they measure different things</h2>
+      <div class="grid-3 mt-40">
+        <div class="card">
+          <span class="num">Personal</span>
+          <h3>/userstat · /compare · /botstats</h3>
+          <p>Your career record — runs, wickets, strike rate, milestones, Rubies balance — plus head-to-head comparisons and community-wide numbers.</p>
+        </div>
+        <div class="card">
+          <span class="num">/leaderboard</span>
+          <h3>All-time Top-10s</h3>
+          <p>Runs, Wickets, Sixes, Fours, Centuries, Fifties, Hat-Tricks, POTM, Catches, Hall of Fame, and the Tournament Hall of Fame archive. Forever boards — go make history.</p>
+        </div>
+        <div class="card">
+          <span class="num">/ranking</span>
+          <h3>Weekly & all-time standings</h3>
+          <p>This group's Orange/Purple Cap boards plus global weekly and all-time rankings, with your own position highlighted. Weekly resets every Monday.</p>
+        </div>
+      </div>
+      <p class="lede mt-40">Organisers can keep leaderboards clean with <b>/excludestats</b>, <b>/includestats</b> and <b>/lockedstats</b> — handy for bot and test accounts.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Bring the gully to your group.</h2>
+          <p>Add the bot, run <b>/startcricket</b>, and you're bowling within a minute.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join the community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+          <span>GULLYCRIC BOT</span>
+        </div>
+        <p style="max-width:280px; font-size:0.9rem;">Delivering lightning-fast live scores, player stats and match updates — before the umpire even signals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <ul>
+          <li><a href="modes.html">Solo Mode</a></li>
+          <li><a href="modes.html">Team Mode</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
+          <li><a href="rubies.html">Rubies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="commands.html">All commands</a></li>
+          <li><a href="tournaments.html#roles">Roles & permissions</a></li>
+          <li><a href="modes.html#rules">Rules & quirks</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://t.me/GullyCricPavilion">@GullyCricPavilion</a></li>
+          <li><a href="https://t.me/GullyCricTournaments">@GullyCricTournaments</a></li>
+          <li><a href="https://t.me/bishwofic">Developer: Bishwo</a></li>
+          <li><a href="https://github.com/bishwofic">github.com/bishwofic</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> GullyCric Bot. Runs. Wickets. Glory.</span>
+      <span>Built for gullycricbot.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

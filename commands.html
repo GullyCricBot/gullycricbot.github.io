@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GullyCric Bot — Commands</title>
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+      <span class="brand-text">GULLY<span class="red">CRIC</span> BOT</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="modes.html" target="_blank">Modes</a></li>
+      <li><a href="rubies.html" target="_blank">Rubies</a></li>
+      <li><a href="tournaments.html" target="_blank">Tournaments</a></li>
+      <li><a href="commands.html" target="_blank">Commands</a></li>
+      <li><a href="faq.html" target="_blank">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://t.me/GullyCricPavilion" class="btn btn-ghost" style="padding:10px 20px;font-size:0.85rem;">Community</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= COMMANDS ================= -->
+  <section id="commands">
+    <div class="container">
+      <div class="eyebrow">Command reference</div>
+      <h2 style="max-width:640px;">Every command, filterable by who can use it</h2>
+
+      <input type="text" class="cmd-search" id="cmdSearch" placeholder="Search a command… e.g. impact, batting, tournament">
+      <div class="cmd-filters" id="cmdFilters">
+        <button class="cmd-filter active" data-tag="all">All</button>
+        <button class="cmd-filter" data-tag="everyone">Everyone</button>
+        <button class="cmd-filter" data-tag="host">Host & Captain</button>
+        <button class="cmd-filter" data-tag="admin">Group Admin</button>
+        <button class="cmd-filter" data-tag="organiser">Organiser</button>
+        <button class="cmd-filter" data-tag="dev">Core Dev</button>
+      </div>
+
+      <div class="cmd-grid" id="cmdGrid"></div>
+      <div class="cmd-empty" id="cmdEmpty">No commands match that search.</div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Bring the gully to your group.</h2>
+          <p>Add the bot, run <b>/startcricket</b>, and you're bowling within a minute.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join the community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+          <span>GULLYCRIC BOT</span>
+        </div>
+        <p style="max-width:280px; font-size:0.9rem;">Delivering lightning-fast live scores, player stats and match updates — before the umpire even signals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <ul>
+          <li><a href="modes.html">Solo Mode</a></li>
+          <li><a href="modes.html">Team Mode</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
+          <li><a href="rubies.html">Rubies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="commands.html">All commands</a></li>
+          <li><a href="tournaments.html#roles">Roles & permissions</a></li>
+          <li><a href="modes.html#rules">Rules & quirks</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://t.me/GullyCricPavilion">@GullyCricPavilion</a></li>
+          <li><a href="https://t.me/GullyCricTournaments">@GullyCricTournaments</a></li>
+          <li><a href="https://t.me/bishwofic">Developer: Bishwo</a></li>
+          <li><a href="https://github.com/bishwofic">github.com/bishwofic</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> GullyCric Bot. Runs. Wickets. Glory.</span>
+      <span>Built for gullycricbot.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

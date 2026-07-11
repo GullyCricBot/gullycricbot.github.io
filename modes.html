@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GullyCric Bot — Modes & Rules</title>
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+      <span class="brand-text">GULLY<span class="red">CRIC</span> BOT</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="modes.html" target="_blank">Modes</a></li>
+      <li><a href="rubies.html" target="_blank">Rubies</a></li>
+      <li><a href="tournaments.html" target="_blank">Tournaments</a></li>
+      <li><a href="commands.html" target="_blank">Commands</a></li>
+      <li><a href="faq.html" target="_blank">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://t.me/GullyCricPavilion" class="btn btn-ghost" style="padding:10px 20px;font-size:0.85rem;">Community</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= MODES ================= -->
+  <section id="modes">
+    <div class="container">
+      <div class="eyebrow">Game modes</div>
+      <h2 class="split-title">Pick your <span class="blue">format</span>, we'll <span class="red">umpire</span></h2>
+      <p class="lede">From a free-for-all with strangers to a full IPL-style league across groups — GullyCric scales from one over to a whole season.</p>
+    </div>
+
+    <div class="container feature" style="margin-top:56px;">
+      <div class="section-banner"><img src="assets/img/banner-solo.jpg" alt="Solo Mode — Player vs Player"></div>
+      <div class="feature-copy">
+        <div class="eyebrow">Solo Mode</div>
+        <h2>Every player bats their own innings</h2>
+        <p class="lede">A free-for-all where everyone takes a turn batting while the rest of the group bowls. Best all-round performance wins the round.</p>
+        <ul class="feature-list cols">
+          <li><b>/joinsolo</b> to queue up, <b>/leavesolo</b> if you change your mind — the match auto-starts ~60s after the second player joins, or the host fires <b>/forcestart</b>.</li>
+          <li>Pick 3 or 6 balls per over. Join alone and you'll face the bot itself.</li>
+          <li>The number <b>0 is disabled entirely</b> in Solo — every delivery and shot is 1–6.</li>
+          <li>A live standings card tracks runs, balls and wickets as the rounds rotate.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container feature" style="margin-top:88px;">
+      <div class="section-banner"><img src="assets/img/banner-team.jpg" alt="Team Mode — Squad vs Squad"></div>
+      <div class="feature-copy">
+        <div class="eyebrow">Team Mode</div>
+        <h2>The flagship: two teams, one toss, a Super Over if it's tied</h2>
+        <p class="lede">Captains, betting, uneven squads that auto-balance, and a full second innings chase. This is GullyCric at full stretch.</p>
+        <ul class="feature-list cols">
+          <li><b>Claim Host →</b> create team slots → players join with <b>/join_team_a</b> / <b>/join_team_b</b> during a ~95s window.</li>
+          <li>Host sets overs with <b>/set_overs</b>; the toss fires automatically and the winning captain picks bat or field.</li>
+          <li>Captains send batters and bowlers with <b>/batting N</b> and <b>/bowling N</b> — hosts can too.</li>
+          <li>Target is first-innings score + 1. Still tied after both innings? A one-over <b>Super Over</b> decides it.</li>
+          <li>Mid-match tools: <b>/substitute</b> (pre-innings, unlimited), <b>/impact</b> (max 2 per team), <b>/add · /remove · /shift</b> for the host.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUIRKS ================= -->
+  <section class="tight" style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);" id="rules">
+    <div class="container">
+      <div class="eyebrow">Gameplay rules & quirks</div>
+      <h2 style="max-width:600px;">The small print that decides close matches</h2>
+      <div class="grid-3 mt-40">
+        <div class="card">
+          <span class="num">Rotation</span>
+          <h3>Strike & dismissals</h3>
+          <p>Strike rotates on odd runs (1/3/5) and at the end of each over. Out for a duck on 0 runs; three wickets in a row is a hat-trick.</p>
+        </div>
+        <div class="card">
+          <span class="num">Team mode only</span>
+          <h3>The tactical zero</h3>
+          <p>A bowler may bowl one dead-ball 0 per over — a forced dot, no matter what the batter plays. Banned on the last 2 balls of an innings, and a batter can't block a hat-trick ball with it.</p>
+        </div>
+        <div class="card">
+          <span class="num">Fairness</span>
+          <h3>Anti-spam limits</h3>
+          <p>No bowler takes two overs back-to-back. The same delivery can't repeat more than twice running, or 3 times total in an over.</p>
+        </div>
+        <div class="card">
+          <span class="num">80 seconds</span>
+          <h3>AFK protection</h3>
+          <p>An idle bowler concedes +6 and gets rotated out; an idle batter is given out. Use <b>/alert</b> to ping teammates before the timer bites.</p>
+        </div>
+        <div class="card">
+          <span class="num">DM only</span>
+          <h3>Bowling happens privately</h3>
+          <p>When it's your turn, the bot DMs a number keyboard. No keyboard? Tap Bowl Delivery in the group and make sure you've verified.</p>
+        </div>
+        <div class="card">
+          <span class="num">/sledge</span>
+          <h3>Commentary & banter</h3>
+          <p>English or Hindi commentary via <b>/changecom</b>. Admins can toggle spicy sledging on or off with <b>/sledgeon</b> / <b>/sledgeoff</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Bring the gully to your group.</h2>
+          <p>Add the bot, run <b>/startcricket</b>, and you're bowling within a minute.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join the community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+          <span>GULLYCRIC BOT</span>
+        </div>
+        <p style="max-width:280px; font-size:0.9rem;">Delivering lightning-fast live scores, player stats and match updates — before the umpire even signals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <ul>
+          <li><a href="modes.html">Solo Mode</a></li>
+          <li><a href="modes.html">Team Mode</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
+          <li><a href="rubies.html">Rubies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="commands.html">All commands</a></li>
+          <li><a href="tournaments.html#roles">Roles & permissions</a></li>
+          <li><a href="modes.html#rules">Rules & quirks</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://t.me/GullyCricPavilion">@GullyCricPavilion</a></li>
+          <li><a href="https://t.me/GullyCricTournaments">@GullyCricTournaments</a></li>
+          <li><a href="https://t.me/bishwofic">Developer: Bishwo</a></li>
+          <li><a href="https://github.com/bishwofic">github.com/bishwofic</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> GullyCric Bot. Runs. Wickets. Glory.</span>
+      <span>Built for gullycricbot.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

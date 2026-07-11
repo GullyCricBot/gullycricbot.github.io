@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GullyCric Bot — Your Cricket Companion</title>
+<meta name="description" content="GullyCric brings hand-cricket to Telegram: live scorecards, Rubies betting, IPL-style tournaments and a bot that umpires every ball. Solo, Team, and Tournament modes.">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+      <span class="brand-text">GULLY<span class="red">CRIC</span> BOT</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="modes.html" target="_blank">Modes</a></li>
+      <li><a href="rubies.html" target="_blank">Rubies</a></li>
+      <li><a href="tournaments.html" target="_blank">Tournaments</a></li>
+      <li><a href="commands.html" target="_blank">Commands</a></li>
+      <li><a href="faq.html" target="_blank">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://t.me/GullyCricPavilion" class="btn btn-ghost" style="padding:10px 20px;font-size:0.85rem;">Community</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Telegram · Hand-Cricket · Est. by Bishwo</div>
+        <h1>The bowler hides a number.<br>The bot never blinks.</h1>
+        <p class="hero-sub">GullyCric turns street hand-cricket into a full Telegram experience — live scorecards, ball-by-ball commentary, a Rubies economy, and IPL-style tournaments. One duel: bowler picks 0–6 in DM, batter guesses in the group. Match the number, you're out.</p>
+        <div class="hero-actions">
+          <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join @GullyCricPavilion</a>
+          <a href="modes.html" target="_blank" class="btn btn-outline">See how it's played</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>0–6</b>every delivery</div>
+          <div><b>80s</b>AFK timer</div>
+          <div><b>3</b>game modes</div>
+          <div><b>&#8734;</b>tournaments run</div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/img/hero-banner.jpg" alt="GullyCric Bot — Your Cricket Companion">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="duel" id="duelWidget">
+        <div class="duel-head">
+          <h3>Try the core duel</h3>
+          <span class="duel-status" id="duelStatus">Your call, batter</span>
+        </div>
+        <div class="duel-board">
+          <div class="duel-figure">
+            <div class="duel-label">Bowler (bot, hidden)</div>
+            <div class="duel-num" id="bowlerNum">?</div>
+          </div>
+          <div class="duel-vs">VS</div>
+          <div class="duel-figure">
+            <div class="duel-label">You (batter)</div>
+            <div class="duel-num" id="batterNum">–</div>
+          </div>
+        </div>
+        <div class="duel-result" id="duelResult">Pick a shot, 0 to 6. Match the bowler's number and you're gone.</div>
+        <div class="duel-picker" id="duelPicker"></div>
+        <div class="duel-score">
+          <div>Runs <b id="scoreRuns">0</b></div>
+          <div>Balls <b id="scoreBalls">0</b></div>
+          <div>Wickets <b id="scoreWkts">0</b>/1</div>
+        </div>
+        <div class="duel-foot">A one-ball taste of Solo Mode. The real bot plays full overs, both innings, in your group.</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="how tight" id="how">
+    <div class="container">
+      <div class="eyebrow">Getting started</div>
+      <h2 style="max-width:640px;">Three steps between you and your first over</h2>
+    </div>
+    <div class="how-grid container" style="margin-top:36px;">
+      <div class="how-step">
+        <div class="how-tag">Step 1</div>
+        <h3>Verify in DM</h3>
+        <p>Tap the welcome button and press Start in the bot's DM — once. It unlocks squad tagging, bowling keyboards, and tournament rosters. Skip it and your deliveries never arrive.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-tag">Step 2</div>
+        <h3>Open the menu</h3>
+        <p><code>/startcricket</code> drops a menu card in your group: Solo, Team, Tournaments, Help, Cancel. Only one card lives per chat — a fresh one retires the last.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-tag">Step 3</div>
+        <h3>Play the duel</h3>
+        <p>Bowler picks 0–6 in DM. Batter guesses in the group. Same number, OUT. Different number, that many runs. Everything else — stats, Rubies, tournaments — is built on this.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Bring the gully to your group.</h2>
+          <p>Add the bot, run <b>/startcricket</b>, and you're bowling within a minute. Group not authorised yet? @GullyCricPavilion will sort you out.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join the community</a>
+          <a href="https://t.me/GullyCricTournaments" class="btn btn-outline" style="border-color:#fff;color:#fff;">Follow tournaments</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+          <span>GULLYCRIC BOT</span>
+        </div>
+        <p style="max-width:280px; font-size:0.9rem;">Delivering lightning-fast live scores, player stats and match updates — before the umpire even signals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <ul>
+          <li><a href="modes.html">Solo Mode</a></li>
+          <li><a href="modes.html">Team Mode</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
+          <li><a href="rubies.html">Rubies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="commands.html">All commands</a></li>
+          <li><a href="tournaments.html#roles">Roles & permissions</a></li>
+          <li><a href="modes.html#rules">Rules & quirks</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://t.me/GullyCricPavilion">@GullyCricPavilion</a></li>
+          <li><a href="https://t.me/GullyCricTournaments">@GullyCricTournaments</a></li>
+          <li><a href="https://t.me/bishwofic">Developer: Bishwo</a></li>
+          <li><a href="https://github.com/bishwofic">github.com/bishwofic</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> GullyCric Bot. Runs. Wickets. Glory.</span>
+      <span>Built for gullycricbot.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

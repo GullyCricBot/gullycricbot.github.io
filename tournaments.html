@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GullyCric Bot — Tournaments & Settings</title>
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Manrope:wght@400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+      <span class="brand-text">GULLY<span class="red">CRIC</span> BOT</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="modes.html" target="_blank">Modes</a></li>
+      <li><a href="rubies.html" target="_blank">Rubies</a></li>
+      <li><a href="tournaments.html" target="_blank">Tournaments</a></li>
+      <li><a href="commands.html" target="_blank">Commands</a></li>
+      <li><a href="faq.html" target="_blank">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://t.me/GullyCricPavilion" class="btn btn-ghost" style="padding:10px 20px;font-size:0.85rem;">Community</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= TOURNAMENTS ================= -->
+  <section id="tournaments">
+    <div class="container">
+      <div class="section-banner"><img src="assets/img/banner-tournaments.jpg" alt="Tournaments — Runs, Wickets, Glory"></div>
+      <div class="eyebrow">Tournaments</div>
+      <h2 class="split-title">Full IPL-style leagues, <span class="blue">automated</span> end to end</h2>
+      <p class="lede">Registered teams, group stages, a live points table with NRR, fixtures across multiple groups, playoffs, and champions immortalised in the Hall of Fame.</p>
+
+      <div class="grid-4 mt-40">
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Following along</h3>
+          <p><b>/pointstable</b>, <b>/tourroster</b>, <b>/tourstats</b>, <b>/schedule</b> (your own timezone via <b>/mytimezone</b>).</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>Running one</h3>
+          <p><b>/hosttournament</b> walks organisers through naming the tour and registering teams, squad by squad.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎛️</div>
+          <h3>Control panel</h3>
+          <p><b>/tournament</b> opens Team Groups, Squads, Points Table, Status, Top Scorers, Fixtures and Schedule in one place.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏆</div>
+          <h3>Playoffs</h3>
+          <p><b>/startplayoffs</b> needs 4+ non-forfeited teams; seeds top 4 into Eliminator → Qualifiers → Final automatically.</p>
+        </div>
+      </div>
+
+      <p class="lede mt-40">Match results update the points table and NRR by themselves. Playoff brackets advance on their own. Orange/Purple Cap Rubies post automatically. Discipline tools — <b>/forfeit</b>, <b>/pen</b>, <b>/deltourteam</b> — stay in the organiser's back pocket for when a team goes quiet.</p>
+    </div>
+  </section>
+
+  <!-- ================= ROLES ================= -->
+  <section style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);" id="roles">
+    <div class="container">
+      <div class="eyebrow">Roles & permissions</div>
+      <h2 style="max-width:600px;">Everyone in the group has a job — some just have more buttons</h2>
+      <div class="roles-grid mt-40">
+        <div class="role-card">
+          <h3>Player</h3>
+          <p>Anyone in the group. Joins matches, bats, bowls, bets, checks stats.</p>
+        </div>
+        <div class="role-card">
+          <h3>Captain</h3>
+          <p>Chosen after the toss. Sends batters and bowlers, transfers captaincy, renames the team.</p>
+        </div>
+        <div class="role-card">
+          <h3>Host</h3>
+          <p>Whoever claims host in setup. Controls the lobby, overs, rosters, force-start, timers — and everything a captain can.</p>
+        </div>
+        <div class="role-card tier-2">
+          <h3>Group Admin</h3>
+          <p>Telegram admins of the group. Lock/unlock the bot, toggle sledging and cleanup, cancel matches, confirm <b>/endcricket</b>.</p>
+        </div>
+        <div class="role-card tier-2">
+          <h3>Organiser (Superman)</h3>
+          <p>Trusted users granted full rights via <b>/superman</b>. Runs tournaments, authorises groups, sees the extended menu.</p>
+        </div>
+        <div class="role-card tier-3">
+          <h3>Core Developers</h3>
+          <p>The three hardcoded master IDs. Only they grant or revoke Superman and use owner-level tools.</p>
+        </div>
+      </div>
+      <p class="lede mt-40"><b>/endcricket</b> needs 2 admin confirmations to abort a live match — no lone wolf nukes a game in progress.</p>
+    </div>
+  </section>
+
+  <!-- ================= AUTOMATION ================= -->
+  <section id="automation">
+    <div class="container">
+      <div class="eyebrow">Automation & housekeeping</div>
+      <h2 style="max-width:640px;">A lot of the magic is invisible</h2>
+      <div class="grid-3 mt-40">
+        <div class="card"><span class="num">01</span><h3>Menu dedup</h3><p>Only one main menu lives per chat — a fresh <b>/startcricket</b> retires the old card seconds after landing.</p></div>
+        <div class="card"><span class="num">02</span><h3>Self-cleaning messages</h3><p>Warnings, /about cards, announcements and command echoes delete themselves after a short delay.</p></div>
+        <div class="card"><span class="num">03</span><h3>Post-match cleanup</h3><p>Old match messages sweep away after a game — toggle per group with <b>/cleanuppostmatch</b>.</p></div>
+        <div class="card"><span class="num">04</span><h3>Welcome & verify</h3><p>New members get a witty welcome and a verify button, auto-deleting in 60s — toggle with <b>/welcomeplayers</b>.</p></div>
+        <div class="card"><span class="num">05</span><h3>Flood control</h3><p>A per-chat token bucket lets wicket bursts fire instantly while respecting Telegram's rate limits. The bot never crashes from it.</p></div>
+        <div class="card"><span class="num">06</span><h3>Crash-safe state</h3><p>Live matches persist to disk — a redeploy or restart resumes cleanly instead of eating your match.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <h2>Bring the gully to your group.</h2>
+          <p>Add the bot, run <b>/startcricket</b>, and you're bowling within a minute.</p>
+        </div>
+        <div class="cta-band-actions">
+          <a href="https://t.me/GullyCricPavilion" class="btn btn-primary">Join the community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="GullyCric Bot logo">
+          <span>GULLYCRIC BOT</span>
+        </div>
+        <p style="max-width:280px; font-size:0.9rem;">Delivering lightning-fast live scores, player stats and match updates — before the umpire even signals.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Play</h4>
+        <ul>
+          <li><a href="modes.html">Solo Mode</a></li>
+          <li><a href="modes.html">Team Mode</a></li>
+          <li><a href="tournaments.html">Tournaments</a></li>
+          <li><a href="rubies.html">Rubies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="commands.html">All commands</a></li>
+          <li><a href="tournaments.html#roles">Roles & permissions</a></li>
+          <li><a href="modes.html#rules">Rules & quirks</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://t.me/GullyCricPavilion">@GullyCricPavilion</a></li>
+          <li><a href="https://t.me/GullyCricTournaments">@GullyCricTournaments</a></li>
+          <li><a href="https://t.me/bishwofic">Developer: Bishwo</a></li>
+          <li><a href="https://github.com/bishwofic">github.com/bishwofic</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> GullyCric Bot. Runs. Wickets. Glory.</span>
+      <span>Built for gullycricbot.github.io</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
